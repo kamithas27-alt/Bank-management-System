@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    char name[20];
+    long long phone, aadhaar;
+    int pin, ch, amt;
+    float bal = 0;
+
+    printf("Name: "); scanf("%s", name);
+    printf("Phone: "); scanf("%lld", &phone);
+    printf("Aadhaar: "); scanf("%lld", &aadhaar);
+    printf("Set 4-digit PIN: "); scanf("%d", &pin);
+
+    while(1) {
+        printf("\n1.Deposit 2.Withdraw 3.Balance 4.Exit\n");
+        scanf("%d", &ch);
+
+        if(ch==1){ scanf("%d",&amt); bal+=amt; }
+        else if(ch==2){ scanf("%d",&amt); if(amt<=bal) bal-=amt; }
+        else if(ch==3){ printf("Balance: %.2f", bal); }
+        else break;
+    }
+}
